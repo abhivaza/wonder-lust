@@ -35,7 +35,29 @@
         "targetName": "test"
       },
       "exclude": ["apps/wonder-lust-services-e2e/**/*"]
+    },
+    {
+      "plugin": "@nx/playwright/plugin",
+      "options": {
+        "targetName": "e2e"
+      }
     }
   ],
-  "nxCloudAccessToken": "ZjliYzJmMzYtY2UwZS00ZWU5LWEyNTctN2U4ZjQ3NTlkNzI1fHJlYWQtd3JpdGU="
+  "nxCloudAccessToken": "ZjliYzJmMzYtY2UwZS00ZWU5LWEyNTctN2U4ZjQ3NTlkNzI1fHJlYWQtd3JpdGU=",
+  "defaultBase": "main",
+  "targetDefaults": {
+    "@angular-devkit/build-angular:browser": {
+      "cache": true,
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"]
+    }
+  },
+  "generators": {
+    "@nx/angular:application": {
+      "e2eTestRunner": "playwright",
+      "linter": "eslint",
+      "style": "css",
+      "unitTestRunner": "jest"
+    }
+  }
 }
