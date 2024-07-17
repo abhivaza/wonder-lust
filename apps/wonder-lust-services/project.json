@@ -1,0 +1,24 @@
+{
+  "name": "wonder-lust-services",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/wonder-lust-services/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "wonder-lust-services:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "wonder-lust-services:build:development"
+        },
+        "production": {
+          "buildTarget": "wonder-lust-services:build:production"
+        }
+      }
+    }
+  }
+}
